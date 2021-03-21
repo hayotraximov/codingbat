@@ -1,0 +1,167 @@
+#proglang
+
+###
+POST http://localhost:8080/api/proglang
+Content-Type: application/json
+
+{
+  "name": "Python",
+  "description": "Yaxshi narsa"
+}
+
+###
+PUT http://localhost:8080/api/proglang/2
+Content-Type: application/json
+
+{
+  "name": "Python",
+  "description": "Zo'r narsa"
+}
+
+###
+GET http://localhost:8080/api/proglang
+
+###
+GET http://localhost:8080/api/proglang/2
+
+#categoriya
+
+###
+POST http://localhost:8080/category
+Content-Type: application/json
+
+{
+  "name": "Warmup-3",
+  "proglangId": 2
+}
+
+###
+PUT http://localhost:8080/category/4
+Content-Type: application/json
+
+{
+  "name": "Warmup-1",
+  "proglangId": 2
+}
+
+
+###
+GET http://localhost:8080/category/4
+
+
+###
+GET http://localhost:8080/category
+
+#task
+###
+POST http://localhost:8080/task
+Content-Type: application/json
+
+{
+  "name": "sleepIn",
+  "text": "The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation. We sleep in if it is not a weekday or were on vacation. Return true if we sleep in.",
+  "examples":"sleepIn(false, false) → true, sleepIn(true, false) → false , sleepIn(false, true) → true",
+  "categoryId": 2
+}
+
+###
+PUT http://localhost:8080/task/4
+Content-Type: application/json
+
+{
+  "name": "sleepOn",
+  "text": "The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation. We sleep in if it is not a weekday or were on vacation. Return true if we sleep in.",
+  "examples":"sleepIn(false, false) → true, sleepIn(true, false) → false , sleepIn(false, true) → true",
+  "categoryId": 2
+}
+
+###
+GET http://localhost:8080/task/4
+
+###
+GET http://localhost:8080/task
+
+#user
+
+###
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "email": "radews@gmail.com",
+  "password": "3434hjtjtyf"
+}
+
+
+###
+PUT http://localhost:8080/user/1
+Content-Type: application/json
+
+{
+  "email": "hayot@gmail.com",
+  "password": "3434hjtjtyf"
+}
+
+###
+GET http://localhost:8080/user/1
+
+###
+GET http://localhost:8080/user
+
+#starbadge
+
+###
+POST http://localhost:8080/starbadge
+Content-Type: application/json
+
+{
+  "score": "32",
+  "langId": 2
+}
+
+###
+PUT http://localhost:8080/starbadge/3
+Content-Type: application/json
+
+{
+  "score": "10",
+  "langId": 2
+}
+
+###
+GET http://localhost:8080/starbadge/3
+
+###
+GET http://localhost:8080/starbadge
+
+
+#answer
+
+###
+POST http://localhost:8080/answer
+Content-Type: application/json
+
+{
+  "body": "public boolean sleepIn(boolean weekday, boolean vacation) {if (!weekday || vacation) return true; // if () return false;}",
+  "task_id": 1,
+  "user_id": 1,
+  "isTrue": true
+}
+
+
+###
+PUT http://localhost:8080/answer/1
+Content-Type: application/json
+
+{
+  "body": "public boolean sleepIn(boolean weekday, boolean vacation) {if (!weekday || vacation) return true; // if () return false;}",
+  "task_id": 1,
+  "user_id": 1,
+  "isTrue": false
+}
+
+###
+GET http://localhost:8080/answer/1
+
+###
+GET http://localhost:8080/answer
